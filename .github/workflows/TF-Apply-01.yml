@@ -26,11 +26,11 @@ jobs:
       - name: Terraform Plan
         id: plan
         if: github.event_name == 'push'
-        run: terraform plan -no-color
+        run: terraform plan -no-color -out=tfplan
         continue-on-error: true
       - name: Terraform plan status
         if: steps.plan.outcome == 'failure'
         run: exit 1
       - name: Terraform Apply
         if: github.ref == 'refs/head/main' && github.event_name =='push'
-        run:  terraform apply  -auto-approve
+        run:  terraform apply tfplan -auto-approve
