@@ -1,0 +1,6 @@
+
+.aws
+*.exe
+*.txt
+*.tfstate*
+*.lock*
