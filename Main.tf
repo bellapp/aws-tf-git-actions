@@ -6,14 +6,14 @@ terraform {
     }
   }
 
-  backend "remote" {
-  hostname = "app.terraform.io"  
-  organization = "Bell"
+#   backend "remote" {
+#   hostname = "app.terraform.io"  
+#   organization = "Bell"
 
-    workspaces {
-      name = "AWSBackup"
-    }
-  }
+#     workspaces {
+#       name = "AWSBackup"
+#     }
+#   }
 }
 
 provider "aws" {
